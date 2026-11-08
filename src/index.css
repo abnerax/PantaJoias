@@ -68,3 +68,74 @@
   border: 1px solid rgba(212, 175, 55, 0.18);
 }
 
+/* 3D Floating Animations & Perspective */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@keyframes float-levitate {
+  0%, 100% {
+    transform: translateY(0px) rotateX(4deg) rotateY(-4deg) rotateZ(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateX(-2deg) rotateY(6deg) rotateZ(1deg);
+  }
+}
+
+@keyframes float-levitate-alt {
+  0%, 100% {
+    transform: translateY(0px) rotateX(-3deg) rotateY(5deg) rotateZ(-1deg);
+  }
+  50% {
+    transform: translateY(-9px) rotateX(5deg) rotateY(-3deg) rotateZ(0deg);
+  }
+}
+
+@keyframes shadow-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(0.82);
+    opacity: 0.22;
+  }
+}
+
+@keyframes gold-specular-sweep {
+  0% {
+    transform: translateX(-150%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(25deg);
+  }
+}
+
+.animate-float-1 {
+  animation: float-levitate 5s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-levitate-alt 5.6s ease-in-out 0.8s infinite;
+}
+
+.animate-float-3 {
+  animation: float-levitate 6.2s ease-in-out 1.6s infinite;
+}
+
+.animate-float-4 {
+  animation: float-levitate-alt 5.4s ease-in-out 2.4s infinite;
+}
+
+.animate-shadow-pulse {
+  animation: shadow-breathe 5s ease-in-out infinite;
+}
+
+.animate-shadow-pulse-alt {
+  animation: shadow-breathe 5.6s ease-in-out 0.8s infinite;
+}
+

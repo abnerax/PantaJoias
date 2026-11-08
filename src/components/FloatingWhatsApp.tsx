@@ -23,23 +23,36 @@ export const FloatingWhatsApp: React.FC = () => {
         </div>
       )}
 
-      {/* Floating Button */}
-      <a
-        href={getWhatsAppLink()}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative group p-3.5 sm:p-4 rounded-full bg-gradient-to-tr from-[#080808] to-[#1a1a1a] text-[#25D366] border-2 border-[#D4AF37] shadow-[0_4px_20px_rgba(212,175,55,0.35)] hover:shadow-[0_6px_28px_rgba(212,175,55,0.55)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-        aria-label="Conversar no WhatsApp Oficial da PANTA JOIAS"
-      >
-        <span className="sr-only">WhatsApp PANTA JOIAS</span>
-        {/* Subtle Ping Animation */}
-        <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75" />
-          <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#D4AF37]" />
-        </span>
+      {/* Floating 3D Button Stage */}
+      <div className="relative flex flex-col items-center">
+        <a
+          href={getWhatsAppLink()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative group p-3.5 sm:p-4 rounded-full bg-gradient-to-b from-[#1c1a16] via-[#12110e] to-[#080808] text-[#25D366] border-2 border-[#D4AF37] shadow-[0_10px_25px_rgba(212,175,55,0.35)] hover:shadow-[0_14px_35px_rgba(212,175,55,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#D4AF37] animate-float-1"
+          aria-label="Conversar no WhatsApp Oficial da PANTA JOIAS"
+          style={{ transformStyle: 'preserve-3d' }}
+        >
+          <span className="sr-only">WhatsApp PANTA JOIAS</span>
+          
+          {/* Subtle Outer 3D Gold Rim Sheen */}
+          <span className="absolute inset-0 rounded-full border border-white/20 pointer-events-none" />
 
-        <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 text-[#25D366] fill-[#25D366]/20 group-hover:scale-110 transition-transform" />
-      </a>
+          {/* Active Ping Beacon */}
+          <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75" />
+            <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#D4AF37]" />
+          </span>
+
+          <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 text-[#25D366] fill-[#25D366]/20 group-hover:scale-110 transition-transform drop-shadow-[0_2px_8px_rgba(37,211,102,0.4)]" />
+        </a>
+
+        {/* 3D Contact Shadow beneath button */}
+        <span
+          className="w-8 sm:w-10 h-2 rounded-full bg-black/60 blur-xs mt-1 animate-shadow-pulse pointer-events-none"
+          aria-hidden="true"
+        />
+      </div>
     </aside>
   );
 };
